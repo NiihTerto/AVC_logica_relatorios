@@ -20,4 +20,6 @@ def _achar_cliente(codigo):
         if cliente["codigo"] == codigo:
             return cliente
         return None
+
+def _total_do_pedido(codigo):
     

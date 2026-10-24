@@ -121,4 +121,19 @@ def relatorio_pedidos_por_cliente(codigo_cliente):
         print("Este cliente ainda nao tem pedidos.")
         return
 
-    print(f""
+    print(f"{'Pedido:':<8}{'Status':<14}{'Itens':>6}{'Valor':>16}")
+    print("-" * 44)
+    soma = 0
+    for pedido in pedidos_do_cliente:
+        valor = _total_do_pedido(pedido)
+        if pedido["status"] != "cancelado":
+            soma += valor
+        print(f"{pedido['numero']:<8}{pedido['status']:<14}"
+              f'{len(pedido['itens']):>6}{_moeda(valor):>16}')
+    print("-" * 44)
+    print(f"Total (sem cancelados): {_moeda(soma)}")
+
+
+def relatorio_valor_total_estoque():
+    """Soma preco x quantidade de todos os produtos e imprime o total"""
+    cabecalho("Valor total do estoque")

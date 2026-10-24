@@ -142,6 +142,5 @@ def relatorio_pedidos_por_cliente(codigo_cliente):
     if len(pedidos_do_cliente) == 0:
         print("Esse cliente ainda nao tem pedidos.")
         return
-=======
-    for produto in criticos
->>>>>>> c21ca2e3acae8a37dc7192d8bbf033b9b997fa1c
+
+    

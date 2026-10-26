@@ -168,7 +168,7 @@ def menu_relatorios():
     opcao = ler_inteiro("\nEscolha uma opcao: ")
     
     if opcao == 1:
-         relatorio_estoque_critico()
+        relatorio_estoque_critico()
         pausar()
     elif opcao == 2:
         relatorio_por_giro()

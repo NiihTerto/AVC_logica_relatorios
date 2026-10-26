@@ -166,15 +166,16 @@ def menu_relatorios():
     print("0 - Voltar ao menu principal")
 
     opcao = ler_inteiro("\nEscolha uma opcao: ")
-
+    
     if opcao == 1:
-        relatorio_estoque_critico()
+         relatorio_estoque_critico()
         pausar()
     elif opcao == 2:
         relatorio_por_giro()
         pausar()
     elif opcao == 3:
         codigo = ler_inteiro("Codigo do cliente: ")
+        relatorio_pedidos_por_cliente(codigo)
         pausar()
     elif opcao == 4:
         relatorio_valor_total_estoque()

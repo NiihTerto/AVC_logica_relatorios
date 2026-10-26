@@ -156,40 +156,40 @@ def relatorio_valor_total_estoque():
 
 #submenu chamado pelo main.py
 def menu_relatorios():
-    """Submenu do modulo, chamado pelo main.py"""
+    """Submenu do modulo, chamado pelo main.py."""
     while True:
         cabecalho("Relatorios")
-    print("1 - Estoque critico")
-    print("2 - Giro de produtos (mais vendidos)")
-    print("3 - Pedidos por cliente")
-    print("4 - Valor total do estoque")
-    print("0 - Voltar ao menu principal")
+        print("1 - Estoque critico")
+        print("2 - Giro de produtos (mais vendidos)")
+        print("3 - Pedidos por cliente")
+        print("4 - Valor total do estoque")
+        print("0 - Voltar ao menu principal")
+        
+        opcao = ler_inteiro("\nEscolha uma opcao: ")
 
-    opcao = ler_inteiro("\nEscolha uma opcao: ")
-    
-    if opcao == 1:
-        relatorio_estoque_critico()
-        pausar()
-    elif opcao == 2:
-        relatorio_por_giro()
-        pausar()
-    elif opcao == 3:
-        codigo = ler_inteiro("Codigo do cliente: ")
-        relatorio_pedidos_por_cliente(codigo)
-        pausar()
-    elif opcao == 4:
-        relatorio_valor_total_estoque()
-        pausar()
-    elif opcao == 0:
-        break
-    else:
-        mensagem_erro("Opcao invalida.")
+        if opcao == 1:
+            relatorio_estoque_critico()
+            pausar()
+        elif opcao == 2:
+            relatorio_por_giro()
+            pausar()
+        elif opcao == 3:
+            codigo = ler_inteiro("Codigo do cliente: ")
+            relatorio_pedidos_por_cliente(codigo)
+            pausar()
+        elif opcao == 4:
+            relatorio_valor_total_estoque()
+            pausar()
+        elif opcao == 0:
+            break
+        else:
+            mensagem_erro("Opcao invalida.")
 
 
 if __name__ == "__main__":
     relatorio_estoque_critico()
     relatorio_por_giro()
     relatorio_pedidos_por_cliente(1)
-    relatorio_pedidos_por_cliente(3) #cliente sem pedidos
-    relatorio_pedidos_por_cliente(999) #cliente que nao existe
+    relatorio_pedidos_por_cliente(3)    #cliente sem pedidos
+    relatorio_pedidos_por_cliente(999)  #cliente que nao existe
     relatorio_valor_total_estoque()
